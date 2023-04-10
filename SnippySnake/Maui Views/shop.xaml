@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SnippySnake.ViewModels"
+             x:Class="SnippySnake.Maui_Views.StorePage"
+             Title="StorePage">
+    <ContentPage.BindingContext>
+        <viewmodels:StoreViewModel />
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout>
+            <!-- Section for snake skins -->
+            <Label Text="Snake Skins" FontSize="Large" Margin="10,10,10,0" />
+            <CollectionView ItemsSource="{Binding SnakeSkins}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" CornerRadius="5" Margin="10,10,0,10">
+                            <StackLayout>
+                                <Image Source="{Binding Image}" HeightRequest="80" WidthRequest="80" />
+                                <Label Text="{Binding Name}" FontSize="Small" HorizontalTextAlignment="Center" />
+                                <Button Text="{Binding Price}" Command="OnBuyButtonClicked" Margin="0,5,0,0" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Section for token skins -->
+            <Label Text="Token Skins" FontSize="Large" Margin="10,20,10,0" />
+            <CollectionView ItemsSource="{Binding TokenSkins}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" CornerRadius="5" Margin="10,10,0,10">
+                            <StackLayout>
+                                <Image Source="{Binding Image}" HeightRequest="80" WidthRequest="80" />
+                                <Label Text="{Binding Name}" FontSize="Small" HorizontalTextAlignment="Center" />
+                                <Button Text="{Binding Price}" Clicked="OnBuyButtonClicked" Margin="0,5,0,0" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

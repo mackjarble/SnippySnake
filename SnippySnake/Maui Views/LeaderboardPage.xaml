@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SnippySnake.ViewModels"
+             x:Class="SnippySnake.Maui_Views.LeaderboardPage"
+             Title="LeaderboardPage">
+    <StackLayout>
+        <Picker Title="Filter by" ItemsSource="{Binding FilterOptions}" SelectedItem="{Binding SelectedFilter}" />
+
+        <ListView ItemsSource="{Binding LeaderboardEntries}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Rank}" FontAttributes="Bold" />
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding Score}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

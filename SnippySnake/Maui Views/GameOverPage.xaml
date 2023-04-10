@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SnippySnake.ViewModels"
+             x:Class="SnippySnake.Maui_Views.GameOverPage"
+             Title="GameOverPage">
+    <ContentPage.BindingContext>
+        <viewmodels:GameOverViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label Text="Game Over!" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,10" />
+
+        <Label Text="Your Score:" FontSize="Medium" Margin="10,0,0,10" />
+        <Label Text="{Binding Score}" FontSize="Medium" Margin="10,0,0,10" />
+
+        <Button Text="Retry" Command="{Binding RetryCommand}" Margin="10,20,10,0" />
+        <Button Text="Exit to Home" Command="{Binding ExitToHomeCommand}" Margin="10,10,10,0" />
+        <Button Text="Settings" Command="{Binding SettingsCommand}" Margin="10,10,10,0" />
+        <Button Text="Leaderboard" Command="{Binding LeaderboardCommand}" Margin="10,10,10,20" />
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SnippySnake.ViewModels"
+             x:Class="SnippySnake.Maui_Views.SettingsPage"
+             Title="Settings">
+    <ContentPage.BindingContext>
+        <viewmodels:SettingsViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label Text="Settings" FontSize="Large" HorizontalOptions="Center" Margin="0,20,0,10" />
+
+        <Label Text="Sound" FontSize="Medium" Margin="10,0,0,10" />
+        <Switch x:Name="SoundSwitch" IsToggled="{Binding SoundOn}" Margin="10,0,0,10" />
+
+        <Label Text="Vibration" FontSize="Medium" Margin="10,0,0,10" />
+        <Switch x:Name="VibrationSwitch" IsToggled="{Binding VibrationOn}" Margin="10,0,0,10" />
+
+        <Label Text="Other Settings" FontSize="Medium" Margin="10,0,0,10" />
+        <StackLayout Margin="10,0,0,10">
+            <Switch x:Name="Option1Switch" IsToggled="{Binding Option1}" Margin="0,10,0,0" />
+            <Switch x:Name="Option2Switch" IsToggled="{Binding Option2}" Margin="0,10,0,0" />
+            <Switch x:Name="Option3Switch" IsToggled="{Binding Option3}" Margin="0,10,0,0" />
+        </StackLayout>
+
+        <Button Text="Save Changes" Command="{Binding SaveSettingsCommand}" Margin="10,20,10,0" />
+    </StackLayout>
+
+</ContentPage>

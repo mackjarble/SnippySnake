@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SnippySnake.Maui_Views.HomePage"
+    Title="HomePage">
+    <StackLayout>
+        <!-- Visual element to display game logo -->
+        <Image Source="game_logo.png" HeightRequest="100" Margin="0,30,0,0" />
+
+        <!-- Buttons to navigate to different screens -->
+        <Button Text="Play" Clicked="OnPlayButtonClicked" Margin="0,20,0,0" />
+        <Button Text="Store" Clicked="OnStoreButtonClicked" Margin="0,20,0,0" />
+        <Button Text="Leaderboard" Clicked="OnLeaderboardButtonClicked" Margin="0,20,0,0" />
+        <Button Text="Settings" Clicked="OnSettingsButtonClicked" Margin="0,20,0,0" />
+    </StackLayout>
+</ContentPage>

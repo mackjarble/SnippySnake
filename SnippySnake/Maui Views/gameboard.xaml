@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:SnippySnake.ViewModels"
+             x:Class="SnippySnake.Maui_Views.GameBoardPage"
+             Title="GameBoard"
+             x:DataType="viewmodels:GameBoardViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:GameBoardViewModel />
+    </ContentPage.BindingContext>
+    <Grid>
+        <!-- Grid to hold the game board -->
+        <Grid x:Name="gameBoard" BackgroundColor="Black">
+            <!-- Grid rows and columns to represent the game board-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <!-- Additional rows as needed -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <!-- Additional columns as needed -->
+            </Grid.ColumnDefinitions>
+
+            <!--Visual elements to represent the snake and tokens -->
+            <Image x:Name="snake" Grid.Row="{Binding SnakeHeadPosition.Row}" Grid.Column="{Binding SnakeHeadPosition.Column}" Source="snake.png" />
+            <Image x:Name="token" Grid.Row="{Binding TokenPosition.Row}" Grid.Column="{Binding TokenPosition.Column}" Source="token.png" />
+            <!-- Additional visual elements as needed -->
+        </Grid>
+
+        <!-- Visual element to display score and level-->
+        <Label x:Name="scoreLabel" Text="{Binding ScoreText}" VerticalOptions="Start" HorizontalOptions="End" />
+        <Label x:Name="levelLabel" Text="{Binding LevelText}" VerticalOptions="Start" HorizontalOptions="Start" />
+    </Grid>
+</ContentPage>
